@@ -6,15 +6,17 @@ class AddTodo extends React.Component{
         }
    
     changeValue(event){
-        console.log('iNITIAL VALUE');
-        // console.log(this.state.inputText);
-        console.log("event.target.value");
-        console.log(event.target.value);
-        console.log(this.state);
-         this.setState({inputText:event.target.value})
-         console.log(this.state.inputText);
-         
-        
+         this.setState({inputText:event.target.value})  
+    }
+    onSubmit(){
+        let newTodo={
+            id: Date.now(),
+            check: false,
+            title:this.state.inputText
+        }
+        console.log("Newtodo ->");
+        console.log(newTodo);
+        this.props.addHandler(newTodo)
     }
     render(){
         console.log(this.state.inputText);
@@ -22,6 +24,7 @@ class AddTodo extends React.Component{
         return(
             <div>
                 <input value={this.state.inputText} onChange={this.changeValue.bind(this)}/>
+                <button onClick={this.onSubmit.bind(this)}>Submit</button>
                 </div>
         )
     }

@@ -26,6 +26,19 @@ div.TodoContainer {
     text-align: center;
 }
 
+div.Todo {
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    border: .5px solid grey;
+    width: 70%;
+    margin: 5px;
+    margin-left: 100px;
+    margin-right: 50px;
+    /* align-content: center */
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
